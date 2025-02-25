@@ -28,7 +28,7 @@ public class EmployeeService {
     }
 
     // create emplyees
-    public EmployeeEntityLombok createEmployee(@RequestBody EmployeeEntity emp){
+    public EmployeeEntityLombok createEmployee(@RequestBody EmployeeEntityLombok emp){
         return employeeRepository.save(emp);
     }
 

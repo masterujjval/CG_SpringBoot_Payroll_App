@@ -27,7 +27,7 @@ public class EmployeeController {
     }
 
     @PostMapping
-    public EmployeeEntityLombok createEmployee(@RequestBody EmployeeEntity employee) {
+    public EmployeeEntityLombok createEmployee(@RequestBody EmployeeEntityLombok employee) {
         return employeeService.createEmployee(employee);
     }
 
