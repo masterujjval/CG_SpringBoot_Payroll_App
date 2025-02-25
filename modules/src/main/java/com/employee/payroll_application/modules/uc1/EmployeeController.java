@@ -4,13 +4,16 @@ import com.employee.payroll_application.modules.uc2.EmployeeEntity;
 import com.employee.payroll_application.modules.uc2.EmployeeRepository;
 import com.employee.payroll_application.modules.uc3.EmployeeService;
 import com.employee.payroll_application.modules.uc4.EmployeeEntityLombok;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/api/employees")
+@Validated
 public class EmployeeController {
 
     @Autowired
@@ -27,12 +30,12 @@ public class EmployeeController {
     }
 
     @PostMapping
-    public EmployeeEntityLombok createEmployee(@RequestBody EmployeeEntityLombok employee) {
+    public EmployeeEntityLombok createEmployee(@Valid @RequestBody EmployeeEntityLombok employee) {
         return employeeService.createEmployee(employee);
     }
 
     @PutMapping("/{id}")
-    public EmployeeEntityLombok updateEmployee(@PathVariable Long id, @RequestBody EmployeeEntityLombok updatedEmployee) {
+    public EmployeeEntityLombok updateEmployee(@PathVariable Long id, @Valid @RequestBody EmployeeEntityLombok updatedEmployee) {
         return employeeService.updateEmployee(id,updatedEmployee);
     }
 

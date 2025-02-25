@@ -2,6 +2,10 @@ package com.employee.payroll_application.modules.uc3;
 import com.employee.payroll_application.modules.uc2.EmployeeEntity;
 import com.employee.payroll_application.modules.uc2.EmployeeRepository;
 import com.employee.payroll_application.modules.uc4.EmployeeEntityLombok;
+
+import jakarta.validation.Valid;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.validation.annotation.ValidationAnnotationUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -11,6 +15,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
+@Validated
 public class EmployeeService {
 
     @Autowired
@@ -28,19 +33,22 @@ public class EmployeeService {
     }
 
     // create emplyees
-    public EmployeeEntityLombok createEmployee(@RequestBody EmployeeEntityLombok emp){
+    public EmployeeEntityLombok createEmployee(@Valid @RequestBody EmployeeEntityLombok emp){
         return employeeRepository.save(emp);
     }
 
     // for updating the employee record in the database
 
-    public EmployeeEntityLombok updateEmployee(Long id, @RequestBody EmployeeEntityLombok updatedEmployee) {
+    public EmployeeEntityLombok updateEmployee(Long id, @Valid @RequestBody EmployeeEntityLombok updatedEmployee) {
+        System.out.println("Updated Employee Name: " + updatedEmployee.getName());  // Debugging
         return employeeRepository.findById(id).map(employee -> {
-            employee.setName(updatedEmployee.getName());
+            employee.setName(updatedEmployee.getName());  // Yahan error aa raha hai
             employee.setSalary(updatedEmployee.getSalary());
             return employeeRepository.save(employee);
         }).orElseThrow(() -> new RuntimeException("Employee not found"));
     }
+
+
 
     //delete record
     public String deleteEmployee( Long id) {
