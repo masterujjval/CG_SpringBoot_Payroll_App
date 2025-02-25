@@ -28,7 +28,7 @@ public class EmployeeService {
     // find by id
     public EmployeeEntityLombok getEmployeeById(Long id){
 
-        return employeeRepository.findById(id).orElseThrow(()->new RuntimeException("Record not found"));
+        return employeeRepository.findById(id).orElseThrow(()->new RuntimeException("Employee ID not found!!"));
 
     }
 
