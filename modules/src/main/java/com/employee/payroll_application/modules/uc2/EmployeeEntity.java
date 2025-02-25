@@ -2,6 +2,9 @@ package com.employee.payroll_application.modules.uc2;
 
 import jakarta.persistence.*;
 
+// will run program using EmployeeEntityLombok
+
+@Deprecated
 @Entity
 @Table(name="employees")
 public class EmployeeEntity {
