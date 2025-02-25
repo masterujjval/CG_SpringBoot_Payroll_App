@@ -16,7 +16,7 @@ public class EmployeeService {
     private EmployeeRepository employeeRepository;
 
     public List<EmployeeEntity> getAllEmployees(){
-       return employeeRepository.findAll();
+        return employeeRepository.findAll();
     }
 
     // find by id

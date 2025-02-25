@@ -13,7 +13,6 @@ import java.util.List;
 public class EmployeeController {
 
     @Autowired
-    private EmployeeRepository employeeRepository;
     private EmployeeService employeeService;
 
     @GetMapping
