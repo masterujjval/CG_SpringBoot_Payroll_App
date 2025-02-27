@@ -27,7 +27,7 @@ public class GlobalExceptionHandler {
 
     // Handle generic exceptions
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
-    @ExceptionHandler(Exception.class)
+    @ExceptionHandler(RuntimeException.class)
     public Map<String, String> handleGenericException(Exception ex) {
         Map<String, String> errorResponse = new HashMap<>();
         errorResponse.put("error", "Something went wrong!");
