@@ -23,7 +23,7 @@ public class EmployeeEntityLombok {
     private double salary;
     private String gender;
     @JsonFormat(pattern = "dd-MM-yyyy")
-    @PastOrPresent(message = "start date should be past or todays date ")
+    @PastOrPresent(message = "start date should be past or today's date ")
     @NotNull(message = "Date should not be empty")
     private LocalDate startDate;
     @NotBlank(message = "Please fill the note")
