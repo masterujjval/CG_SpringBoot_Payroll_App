@@ -2,6 +2,8 @@ package com.employee.payroll_application.modules.uc9;
 
 
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -34,4 +36,12 @@ public class GlobalExceptionHandler {
         errorResponse.put("message", ex.getMessage());
         return errorResponse;
     }
+    @ExceptionHandler(HttpMessageNotReadableException.class)
+    public Map<String,String> handler(HttpMessageNotReadableException ex){
+        Map<String, String> errorResponse = new HashMap<>();
+        errorResponse.put("error", "Something went wrong!");
+        errorResponse.put("message", ex.getMessage());
+        return errorResponse;
+    }
+
 }

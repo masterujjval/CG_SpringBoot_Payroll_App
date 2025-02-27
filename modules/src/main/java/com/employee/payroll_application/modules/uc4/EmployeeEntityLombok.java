@@ -1,10 +1,8 @@
 package com.employee.payroll_application.modules.uc4;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.*;
 import lombok.Data;
 
 import java.time.LocalDate;
@@ -23,9 +21,15 @@ public class EmployeeEntityLombok {
     @Min(value = 500, message = "Min wage should be more than 500")
     private double salary;
     private String gender;
+    @JsonFormat(pattern = "dd-MM-yyyy")
+    @PastOrPresent(message = "start date should be past or todays date ")
+    @NotNull(message = "Date should not be empty")
     private LocalDate startDate;
+    @NotBlank(message = "Please fill the note")
     public String note;
+    @NotBlank(message = "Enter profile pic address")
     private String profilePic;
+    @NotNull(message = "Department should not be null")
     private List<String>departments;
 
 
