@@ -12,8 +12,7 @@ import java.util.List;
 
 @Entity
 @Data
-@Table(name = "employees")
-public class   EmployeeEntityLombok {
+public class EmployeeEntityLombok {
 
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -27,6 +26,7 @@ public class   EmployeeEntityLombok {
     private LocalDate startDate;
     public String note;
     private String profilePic;
-    private List<String> departments;
+    private List<String>departments;
+
 
 }
