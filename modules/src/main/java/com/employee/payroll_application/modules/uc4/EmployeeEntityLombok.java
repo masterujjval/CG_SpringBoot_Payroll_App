@@ -14,6 +14,7 @@ public class EmployeeEntityLombok {
 
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @Column(name = "employee_id")
     private Long employeeId;
     @NotEmpty(message = "Name cannot be empty or null")  // Prevent empty/null values
     @Pattern(regexp = "^[A-Za-z ]+$", message = "Name should contain only alphabets and spaces") // Only letters and spaces allowed
@@ -29,7 +30,10 @@ public class EmployeeEntityLombok {
     public String note;
     @NotBlank(message = "Enter profile pic address")
     private String profilePic;
+    @ElementCollection
+    @CollectionTable(name="employee_department",joinColumns = @JoinColumn(name = "id"))
     @NotNull(message = "Department should not be null")
+    @Column(name = "department")
     private List<String>departments;
 
 
