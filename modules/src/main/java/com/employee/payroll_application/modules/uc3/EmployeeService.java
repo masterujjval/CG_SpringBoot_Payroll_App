@@ -40,10 +40,14 @@ public class EmployeeService {
     // for updating the employee record in the database
 
     public EmployeeEntityLombok updateEmployee(Long id, @Valid @RequestBody EmployeeEntityLombok updatedEmployee) {
-        System.out.println("Updated Employee Name: " + updatedEmployee.getName());  // Debugging
         return employeeRepository.findById(id).map(employee -> {
-            employee.setName(updatedEmployee.getName());  // Yahan error aa raha hai
+            employee.setName(updatedEmployee.getName());
             employee.setSalary(updatedEmployee.getSalary());
+
+            // ✅ Departments bhi update karne ke liye
+            employee.getDepartments().clear();
+            employee.getDepartments().addAll(updatedEmployee.getDepartments());
+
             return employeeRepository.save(employee);
         }).orElseThrow(() -> new RuntimeException("Employee not found"));
     }

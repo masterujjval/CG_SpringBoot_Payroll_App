@@ -31,10 +31,13 @@ public class EmployeeEntityLombok {
     @NotBlank(message = "Enter profile pic address")
     private String profilePic;
     @ElementCollection
-    @CollectionTable(name="employee_department",joinColumns = @JoinColumn(name = "id"))
+    @CollectionTable(name = "employee_department", joinColumns = @JoinColumn(name = "employee_id"))
     @NotNull(message = "Department should not be null")
     @Column(name = "department")
-    private List<String>departments;
+    @org.hibernate.annotations.OnDelete(action = org.hibernate.annotations.OnDeleteAction.CASCADE) // Soft Cascade Delete
+    private List<String> departments;
+
+
 
 
 }
