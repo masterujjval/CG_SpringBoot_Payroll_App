@@ -139,3 +139,51 @@ Caused by: java.sql.SQLIntegrityConstraintViolationException: Cannot add or upda
 2025-02-28T14:53:58.513+05:30  INFO 1037672 --- [modules] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2025-02-28T14:53:58.515+05:30  INFO 1037672 --- [modules] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2025-02-28T14:53:58.520+05:30  INFO 1037672 --- [modules] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-02-28T15:11:28.332+05:30  INFO 1039443 --- [modules] [main] c.e.p.modules.ModulesApplication         : Starting ModulesApplication using Java 21.0.6 with PID 1039443 (/home/cosmos/Capgemini-Training/CG_SpringBoot_Payroll_App/modules/target/classes started by cosmos in /home/cosmos/Capgemini-Training/CG_SpringBoot_Payroll_App/modules)
+2025-02-28T15:11:28.335+05:30  INFO 1039443 --- [modules] [main] c.e.p.modules.ModulesApplication         : No active profile set, falling back to 1 default profile: "default"
+2025-02-28T15:11:29.044+05:30  INFO 1039443 --- [modules] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-02-28T15:11:29.046+05:30  INFO 1039443 --- [modules] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-02-28T15:11:29.081+05:30  INFO 1039443 --- [modules] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.employee.payroll_application.modules.uc2.EmployeeRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-02-28T15:11:29.082+05:30  INFO 1039443 --- [modules] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 30 ms. Found 0 JDBC repository interfaces.
+2025-02-28T15:11:29.097+05:30  INFO 1039443 --- [modules] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-02-28T15:11:29.099+05:30  INFO 1039443 --- [modules] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-28T15:11:29.125+05:30  INFO 1039443 --- [modules] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 21 ms. Found 1 JPA repository interface.
+2025-02-28T15:11:29.613+05:30  INFO 1039443 --- [modules] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-02-28T15:11:29.624+05:30  INFO 1039443 --- [modules] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-28T15:11:29.625+05:30  INFO 1039443 --- [modules] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-02-28T15:11:29.658+05:30  INFO 1039443 --- [modules] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-28T15:11:29.659+05:30  INFO 1039443 --- [modules] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1276 ms
+2025-02-28T15:11:29.842+05:30  INFO 1039443 --- [modules] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-28T15:11:29.893+05:30  INFO 1039443 --- [modules] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.8.Final
+2025-02-28T15:11:29.923+05:30  INFO 1039443 --- [modules] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-02-28T15:11:30.179+05:30  INFO 1039443 --- [modules] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-28T15:11:30.207+05:30  INFO 1039443 --- [modules] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-02-28T15:11:30.551+05:30  INFO 1039443 --- [modules] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@61957d9c
+2025-02-28T15:11:30.554+05:30  INFO 1039443 --- [modules] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-02-28T15:11:30.789+05:30  WARN 1039443 --- [modules] [main] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000339: Could not obtain connection metadata: java.sql.SQLSyntaxErrorException: Unknown column 'RESERVED' in 'WHERE'
+2025-02-28T15:11:30.799+05:30  WARN 1039443 --- [modules] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-02-28T15:11:30.800+05:30  WARN 1039443 --- [modules] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-02-28T15:11:30.807+05:30  INFO 1039443 --- [modules] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-02-28T15:11:31.498+05:30  INFO 1039443 --- [modules] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-02-28T15:11:31.574+05:30  INFO 1039443 --- [modules] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-28T15:11:31.757+05:30  INFO 1039443 --- [modules] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-02-28T15:11:32.146+05:30  WARN 1039443 --- [modules] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-28T15:11:32.457+05:30  INFO 1039443 --- [modules] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-02-28T15:11:32.465+05:30  INFO 1039443 --- [modules] [main] c.e.p.modules.ModulesApplication         : Started ModulesApplication in 4.666 seconds (process running for 5.056)
+2025-02-28T15:11:32.468+05:30  INFO 1039443 --- [modules] [main] c.e.p.modules.ModulesApplication         : Logger started in COMMON Environment
+2025-02-28T15:11:32.468+05:30  INFO 1039443 --- [modules] [main] c.e.p.modules.ModulesApplication         : Employee Payroll DB user is payrolluser
+2025-02-28T15:11:57.312+05:30  INFO 1039443 --- [modules] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-28T15:11:57.313+05:30  INFO 1039443 --- [modules] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-02-28T15:11:57.314+05:30  INFO 1039443 --- [modules] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-02-28T15:12:26.244+05:30  INFO 1039443 --- [modules] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-28T15:12:26.246+05:30  INFO 1039443 --- [modules] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-02-28T15:12:26.249+05:30  INFO 1039443 --- [modules] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-02-28T15:12:26.250+05:30  INFO 1039443 --- [modules] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-02-28T15:12:26.256+05:30  INFO 1039443 --- [modules] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

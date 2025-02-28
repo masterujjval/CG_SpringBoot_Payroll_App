@@ -25,6 +25,10 @@ public class EmployeeService {
         return employeeRepository.findAll();
     }
 
+    public List<EmployeeEntityLombok> getEmployeesByDepartment(String department) {
+        return employeeRepository.findEmployeesByDepartment(department);
+    }
+
     // find by id
     public EmployeeEntityLombok getEmployeeById(Long id){
 

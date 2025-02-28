@@ -24,6 +24,12 @@ public class EmployeeController {
         return employeeService.getAllEmployees();
     }
 
+    // Endpoint to Fetch Employees from Sales Department
+    @GetMapping("/department/{dept}")
+    public List<EmployeeEntityLombok> getEmployeesByDepartment(@PathVariable String dept) {
+        return employeeService.getEmployeesByDepartment(dept);
+    }
+
     @GetMapping("/{id}")
     public EmployeeEntityLombok getEmployeeById(@PathVariable Long id) {
         return employeeService.getEmployeeById(id);
