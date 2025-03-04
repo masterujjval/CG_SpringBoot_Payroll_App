@@ -44,7 +44,7 @@ public class EmployeeService {
             employee.setName(updatedEmployee.getName());
             employee.setSalary(updatedEmployee.getSalary());
 
-            // ✅ Departments bhi update karne ke liye
+           
             employee.getDepartments().clear();
             employee.getDepartments().addAll(updatedEmployee.getDepartments());
 
